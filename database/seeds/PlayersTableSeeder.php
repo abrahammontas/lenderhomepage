@@ -1,6 +1,7 @@
 <?php
 
 use App\Player;
+use App\Team;
 use Illuminate\Database\Seeder;
 
 class PlayersTableSeeder extends Seeder
@@ -12,7 +13,9 @@ class PlayersTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(Team::class)->create();
+
         // Create three App\Player instances...
-        $players = factory(Player::class, 5)->create();
+        factory(Player::class, 5)->create();
     }
 }

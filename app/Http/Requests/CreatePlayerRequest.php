@@ -25,7 +25,8 @@ class CreatePlayerRequest extends FormRequest
     {
         return [
             'first_name' => 'required|string',
-            'last_name' => 'required|string'
+            'last_name' => 'required|string',
+            'team_id' => 'required|exists:teams,id'
         ];
     }
 }

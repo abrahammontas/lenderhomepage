@@ -12,6 +12,14 @@ class Player extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name'
+        'first_name', 'last_name', 'team_id'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

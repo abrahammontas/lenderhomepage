@@ -13,7 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+//PLAYER
 Route::post('player', 'Player\PlayerController@store');
+Route::put('player/{player}', 'Player\PlayerController@update');
+
+//TEAM
+Route::post('team', 'Team\TeamController@store');
+Route::get('team/{team}/players', 'Team\TeamController@players');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

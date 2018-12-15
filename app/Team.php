@@ -14,4 +14,12 @@ class Team extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function players()
+    {
+        return $this->HasMany(Player::class);
+    }
 }
