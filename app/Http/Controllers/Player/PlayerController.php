@@ -21,7 +21,7 @@ class PlayerController extends Controller
 
         $player = Player::create($request->all());
 
-        return $this->response( new PlayerResource($player));
+        return $this->response( new PlayerResource($player) );
     }
 
     public function update(UpdatePlayerRequest $request, Player $player)
@@ -30,6 +30,6 @@ class PlayerController extends Controller
 
         $player->update($request->all());
 
-        return $this->response($player);
+        return $this->response( new PlayerResource($player) );
     }
 }
